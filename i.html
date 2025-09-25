@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You 💖</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .card:active {
+      transform: scale(0.98);
+    }
+    .heart {
+      font-size: 100px;
+      color: #e60073;
+      animation: pulse 1.2s infinite;
+    }
+    .message, .image {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 1s ease, max-height 1s ease;
+      margin-top: 20px;
+    }
+    .visible {
+      opacity: 1;
+      max-height: 1000px;
+    }
+    .image img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" onclick="showMessage()" ontouchstart="showMessage()">
+      <div class="heart">❤️</div>
+      <div class="message" id="message">
+        <h2>Happy Birthday, my love</h2>
+        <p>From Salta to your heart in the USA, I think of you every day. Thank you for being you 💫</p>
+      </div>
+      <div class="image" id="image">
+        <img src="https://i.postimg.cc/0ynXRDsh/340655463-756579489239470-3537704801750970833-n.jpg" alt="Us together">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').classList.add('visible');
+      document.getElementById('image').classList.add('visible');
+    }
+  </script>
+</body>
+</html>
+
