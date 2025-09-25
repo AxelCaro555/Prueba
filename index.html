@@ -36,7 +36,7 @@
       color: #e60073;
       animation: pulse 1.2s infinite;
     }
-    .message, .image {
+    .message, .image, .video {
       opacity: 0;
       max-height: 0;
       overflow: hidden;
@@ -51,6 +51,20 @@
       max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .video button {
+      background-color: #e60073;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .video button:hover {
+      background-color: #cc005f;
     }
     @keyframes pulse {
       0% { transform: scale(1); }
@@ -70,6 +84,11 @@
       <div class="image" id="image">
         <img src="https://i.postimg.cc/0ynXRDsh/340655463-756579489239470-3537704801750970833-n.jpg" alt="Us together">
       </div>
+      <div class="video" id="video">
+        <a href="https://www.youtube.com/watch?v=SbjKOI8VTY0" target="_blank" style="text-decoration: none;">
+          <button>🎵 Escuchar nuestra canción</button>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -77,8 +96,8 @@
     function showMessage() {
       document.getElementById('message').classList.add('visible');
       document.getElementById('image').classList.add('visible');
+      document.getElementById('video').classList.add('visible');
     }
   </script>
 </body>
 </html>
-
